@@ -13,7 +13,7 @@ minnodecountaks="2"
 maxnodecountaks="2"
 nodecountaks="2"
 networkpluginaks="azure"
--zonesaks="{1, 2, 3}"
+zonesaks="{1, 2, 3}"
 
 
 
