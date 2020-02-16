@@ -22,8 +22,8 @@ az group create --name $rgname --location $location
 az network vnet create --resource-group $rgname --name $vnetname \
   --address-prefix $vnetaddressprefix \
   --subnet-name $subnetname subnetnameaks \
-  --subnet-prefix $subnetprefixaks \
-  --service-endpoints $subnetendpoints
+  --subnet-prefix $subnetprefixaks #\
+  # --service-endpoints $subnetendpoints
 subnetidaks=$(az network vnet subnet list \
     --resource-group $rgname \
     --vnet-name $vnetname \
