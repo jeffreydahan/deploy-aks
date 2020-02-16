@@ -11,7 +11,10 @@ subnetendpoints="Microsoft.Storage Microsoft.Sql Microsoft.AzureActiveDirectory 
 clusternameaks="aks1"
 minnodecountaks="2"
 maxnodecountaks="2"
+nodecountaks="2"
 networkpluginaks="azure"
+-zonesaks="{1, 2, 3}"
+
 
 
 
@@ -33,5 +36,6 @@ echo $subnetidaks
 
 # create aks cluster
 az aks create --resource-group $rgname --name $clusternameaks --enable-cluster-autoscaler \
-  --min-count $minnodecountaks --max-count $maxnodecountaks --network-plugin $networkpluginaks \
-  --vnet-subnet-id $subnetidaks --generate-ssh-keys
+  --node-count $nodecountaks--min-count $minnodecountaks --max-count $maxnodecountaks \
+  --network-plugin $networkpluginaks --vnet-subnet-id $subnetidaks --zones $zonesaks \
+  --generate-ssh-keys
