@@ -3,8 +3,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: default
+#  vmImage: 'ubuntu-latest'
 
 steps:
 
