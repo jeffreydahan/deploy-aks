@@ -5,7 +5,7 @@ location="westeurope"
 vnetname="aksvnet"
 vnetaddressprefix="10.0.0.0/16"
 subnetnameaks="aksworkers"
-subnetprefixaks="10.2.0.0/24"
+subnetprefixaks="10.0.2.0/24"
 subnetendpoints="Microsoft.Storage Microsoft.Sql Microsoft.AzureActiveDirectory Microsoft.AzureCosmosDB Microsoft.Web \
   Microsoft.KeyVault Microsoft.EventHub Microsoft.ServiceBus Microsoft.ContainerRegistry Microsoft.CognitiveServices"
 clusternameaks="aks1"
@@ -23,7 +23,7 @@ az network vnet create --resource-group $rgname --name $vnetname \
   --address-prefix $vnetaddressprefix
 az network vnet subnet create --resource-group $rgname --vnet-name $vnetname \
   --name $subnetnameaks \
-  --address-prefix $subnetprefixaks \
+  --address-prefixes $subnetprefixaks \
   --service-endpoints $subnetendpoints
 subnetidaks=$(az network vnet subnet list \
     --resource-group $rgname \
