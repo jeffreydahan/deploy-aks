@@ -20,10 +20,11 @@ az group create --name $rgname --location $location
 
 # create vnet and aks worker subnet
 az network vnet create --resource-group $rgname --name $vnetname \
-  --address-prefix $vnetaddressprefix \
+  --address-prefix $vnetaddressprefix
+az network vnet subnet create --resource-group $rgname --name $vnetname \
   --subnet-name $subnetnameaks \
-  --subnet-prefix $subnetprefixaks #\
-  # --service-endpoints $subnetendpoints
+  --subnet-prefix $subnetprefixaks \
+  --service-endpoints $subnetendpoints
 subnetidaks=$(az network vnet subnet list \
     --resource-group $rgname \
     --vnet-name $vnetname \
@@ -31,6 +32,6 @@ subnetidaks=$(az network vnet subnet list \
 echo $subnetidaks
 
 # create aks cluster
-az aks create --resource-group $rgname --name $clusternameaks --attach-acr --enable-cluster-autoscaler \
+az aks create --resource-group $rgname --name $clusternameaks --enable-cluster-autoscaler \
   --min-count $minnodecountaks --max-count $maxnodecountaks --network-plugin $networkpluginaks \
   --vnet-subnet-id $subnetidaks --generate-ssh-keys
