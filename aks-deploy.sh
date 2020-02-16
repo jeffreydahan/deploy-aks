@@ -37,7 +37,8 @@ echo $subnetidaks
 # create aks cluster
 az aks create --resource-group $rgname --name $clusternameaks --enable-cluster-autoscaler \
   --node-count $nodecountaks --min-count $minnodecountaks --max-count $maxnodecountaks \
-  --network-plugin $networkpluginaks --vnet-subnet-id $subnetidaks --zones $zonesaks 
+  --network-plugin $networkpluginaks --vnet-subnet-id $subnetidaks --zones $zonesaks \
+  --no-ssh-key
 
 # validate nodes
 az aks get-credentials --resource-group $rgname --name $clusternameaks
