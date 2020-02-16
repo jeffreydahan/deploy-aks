@@ -6,7 +6,7 @@ vnetname="aksvnet"
 vnetaddressprefix="10.0.0.0/16"
 subnetnameaks="aksworkers"
 subnetprefixaks="10.2.0.0/24"
-subnetendpoints=""Microsoft.Storage Microsoft.Sql Microsoft.AzureActiveDirectory Microsoft.AzureCosmosDB Microsoft.Web \
+subnetendpoints="Microsoft.Storage Microsoft.Sql Microsoft.AzureActiveDirectory Microsoft.AzureCosmosDB Microsoft.Web \
   Microsoft.KeyVault Microsoft.EventHub Microsoft.ServiceBus Microsoft.ContainerRegistry Microsoft.CognitiveServices"
 clusternameaks="aks1"
 minnodecountaks="2"
