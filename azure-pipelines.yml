@@ -10,7 +10,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Jeff Dahan - MS Internal (9a076c3b-efe6-41fc-8586-f2143f2ad975)'
+    azureSubscription: 'xxxxxxxxx'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: 'aks-deploy.sh'
